@@ -6,6 +6,7 @@ const uri = "mongodb+srv://webserver:webserver@cluster0.prj3a.mongodb.net/leggio
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 /***********************************************************/
+/*
 router.get('/', function(req, res, next) {
   res.render('home');
 });
@@ -22,6 +23,7 @@ router.get('/test', function(req, res, next) {
     client.close();
     });
 });
+*/
 /***********************************************************/
 /*
 client.connect(err => {
@@ -48,5 +50,28 @@ client.connect(err => {
   client.close();
 });
 */
+
+router.get('/', (req, res) => {
+  res.render('home');
+});
+
+router.get('/products', (req, res) => {
+  res.render('products', 
+  {products: [
+    {name: "tortellini", 
+     quantity: 1,
+     price: 4.00,
+     description: "lkjdakldfkads;fadsj",
+     image: "tortellini",
+     category: "pasta"},
+
+    {name: "spaghetti",
+     quantity: 4,
+     price: 3.00,
+     description: "adjfajjkkl",
+     image: "spaghetti",
+     category: "pasta"}]
+  });
+});
 
 module.exports = router;

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <link rel = "stylesheet" href = "/stylesheets/products.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+    <header>
+        <!--main nav menu-->
+    </header>
+    <nav>
+        <!--in page category links-->
+    </nav>
+    <main>
+        <% for (var i = 0; i < products.length; i++) { %>
+            <item>
+                <h5><%= products[i].name %>    <%= products[i].quantity %></h5>
+            </item>
+        <% } %> 
+    </main>
+</body>
+</html>
