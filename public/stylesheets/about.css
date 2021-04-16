@@ -13,23 +13,12 @@ main {
     grid-template-columns: auto;
 
     margin: 10%;
-}
-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-.category-link {
-    margin: 1em;
-}
-#list {
-    display: flex;
-    flex-direction: column;
-    margin: 2%;
+    text-align: center;
+    justify-items: center;
 
     border: 1px black solid;
 }
 
-item {
-    border: 1px grey solid;
+p {
+    width: 45%;
 }

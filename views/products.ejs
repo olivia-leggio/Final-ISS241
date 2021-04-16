@@ -8,17 +8,35 @@
 </head>
 <body>
     <header>
-        <!--main nav menu-->
+        <div class = "nav-item">
+            <a href = "/products">products</a>
+        </div>
+        <div class = "nav-item">
+            <a href = "/about">about</a>
+        </div>
+        <div class = "nav-item">
+            <a href = "#">cart</a>
+        </div>
     </header>
-    <nav>
-        <!--in page category links-->
-    </nav>
     <main>
-        <% for (var i = 0; i < products.length; i++) { %>
-            <item>
-                <h5><%= products[i].name %>    <%= products[i].quantity %></h5>
-            </item>
-        <% } %> 
+        <nav>
+            <div class = "category-link">
+                <a href = "#">pasta</a>
+            </div>
+            <div class = "category-link">
+                <a href = "#">bread</a>
+            </div>
+            <div class = "category-link">
+                <a href = "#">pastries</a>
+            </div>
+        </nav>
+        <div id = "list">
+            <% for (var i = 0; i < products.length; i++) { %>
+                <item>
+                    <h5><%= products[i].name %>    <%= products[i].quantity %></h5>
+                </item>
+            <% } %> 
+        </div>
     </main>
 </body>
 </html>

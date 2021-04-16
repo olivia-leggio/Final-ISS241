@@ -47,7 +47,7 @@ client.connect(err => {
       .catch(error => console.error(error))
   });
 
-  client.close();
+  //client.close();
 });
 */
 
@@ -72,6 +72,10 @@ router.get('/products', (req, res) => {
      image: "spaghetti",
      category: "pasta"}]
   });
+});
+
+router.get('/about', (req, res) => {
+  res.render('about');
 });
 
 module.exports = router;
