@@ -62,14 +62,12 @@ router.get('/products', (req, res) => {
      quantity: 1,
      price: 4.00,
      description: "lkjdakldfkads;fadsj",
-     image: "tortellini",
      category: "pasta"},
 
-    {name: "spaghetti",
-     quantity: 4,
+    {name: "farfalle",
+     quantity: 3,
      price: 3.00,
-     description: "adjfajjkkl",
-     image: "spaghetti",
+     description: "ldalleiadfkalkf",
      category: "pasta"}]
   });
 });

@@ -33,7 +33,14 @@
         <div id = "list">
             <% for (var i = 0; i < products.length; i++) { %>
                 <item>
-                    <h5><%= products[i].name %>    <%= products[i].quantity %></h5>
+                    <figure>
+                        <img src = "/images/<%= products[i].name %>.jpeg" alt = "<%= products[i].name %>" 
+                        width = "400" height = "400">
+                    </figure>
+                    <article>
+                        <h2><%= products[i].name %></h2>
+                        <p><%= products[i].description %></p>
+                    </article>
                 </item>
             <% } %> 
         </div>
