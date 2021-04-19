@@ -1,25 +1,22 @@
-Cart = window.localStorage;
+let Cart = window.localStorage;
 
 //adds an item to the cart
 function addCart(item, info) {
-    //updates if already existing in cart
+    //alerts if already existing in cart
     if(Cart.getItem(item)) {
-        let oldQuantity = Cart.getItem(item)[0];
-        let newQuantity = oldQuantity + info[0];
-        let array = Cart.getItem(item)[1];
-        removeCart(item);
-
-        Cart.setItem(item, [newQuantity, array]);
+        window.alert(item + " is already in your cart!");
     }
-    Cart.setItem(item, info);
-    console.log("adding " + item + " to cart");
-    console.log(JSON.parse(info[1]));
+    else {
+        Cart.setItem(item, info);
+        console.log("adding " + item + " to cart");
+    }
 }
 
 //removes and item from the cart
 function removeCart(item) {
     Cart.removeItem(item);
     console.log("removing " + item + " from cart");
+    location.reload();
 }
 
 //returns an array of all keys in the cart

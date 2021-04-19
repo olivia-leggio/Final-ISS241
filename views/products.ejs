@@ -41,7 +41,7 @@
                         <h2><%= products[i].name %></h2>
                         <p><%= products[i].description %></p>
                         <% var product = JSON.stringify(products[i]);  %>
-                        <h5 onclick = "addCart('<%= products[i].name %>', [1, '<%= product %>'])">Add to Cart</h5>
+                        <h5 onclick = "addCart('<%= products[i].name %>', '<%= product %>')">Add to Cart</h5>
                     </article>
                 </item>
             <% } %> 
