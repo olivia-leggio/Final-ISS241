@@ -1,0 +1,8 @@
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.nav-item {
+    margin: 1em;
+}

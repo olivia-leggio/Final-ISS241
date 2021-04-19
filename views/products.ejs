@@ -15,7 +15,7 @@
             <a href = "/about">about</a>
         </div>
         <div class = "nav-item">
-            <a href = "#">cart</a>
+            <a href = "/cart">cart</a>
         </div>
     </header>
     <main>
@@ -40,10 +40,13 @@
                     <article>
                         <h2><%= products[i].name %></h2>
                         <p><%= products[i].description %></p>
+                        <% var product = JSON.stringify(products[i]);  %>
+                        <h5 onclick = "addCart('<%= products[i].name %>', [1, '<%= product %>'])">Add to Cart</h5>
                     </article>
                 </item>
             <% } %> 
         </div>
     </main>
+    <script src = "/javascripts/cart.js"></script>
 </body>
 </html>
