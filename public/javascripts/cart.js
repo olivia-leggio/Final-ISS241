@@ -35,3 +35,10 @@ function checkout() {
     Cart.clear();
     console.log("cart cleared");
 }
+/*
+function addItem(item, info) {
+    addCart(item, info);
+    let popup = document.getElementById("popup");
+    popup.classList.add("shown");
+}
+*/

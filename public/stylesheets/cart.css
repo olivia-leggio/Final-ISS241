@@ -1,3 +1,8 @@
+:root {
+    --serif-font: 'Lora', serif;
+    --sansserif-font: 'Raleway', sans-serif;
+    --highlight-red: #A23122;
+}
 header {
     display: flex;
     flex-direction: row;
@@ -5,6 +10,14 @@ header {
 }
 .nav-item {
     margin: 1em;
+}
+.nav-item a {
+    color: black;
+    font-family: var(--sansserif-font);
+}
+.active a{
+    text-decoration: underline;
+    color: var(--highlight-red);
 }
 
 main {

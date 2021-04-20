@@ -2,13 +2,15 @@
 <html lang = "en">
 <head>
     <link rel = "stylesheet" href = "/stylesheets/products.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Raleway&display=swap" rel="stylesheet"> 
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
 <body>
     <header>
-        <div class = "nav-item">
+        <div class = "nav-item active">
             <a href = "/products">products</a>
         </div>
         <div class = "nav-item">
@@ -20,9 +22,12 @@
     </header>
     <main>
         <nav>
-            <div class = "category-link">
-                <a href = "#">pasta</a>
-            </div>
+            <% if(category === "pasta") { %>
+                <% console.log('category is pasta'); %>
+                <div class = "category-link active">
+                    <a href = "#">pasta</a>
+                </div>
+            <% } %>
             <div class = "category-link">
                 <a href = "#">bread</a>
             </div>
@@ -46,6 +51,7 @@
                 </item>
             <% } %> 
         </div>
+        <!--<h3 id = "popup">added to cart!</h3>-->
     </main>
     <script src = "/javascripts/cart.js"></script>
 </body>
