@@ -1,55 +1,30 @@
 var express = require('express');
 var router = express.Router();
 
-const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://webserver:webserver@cluster0.prj3a.mongodb.net/leggio_dough?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+let MongoClient = require('mongodb').MongoClient;
+let uri = "mongodb+srv://testuser:12345@cluster0.prj3a.mongodb.net/leggio_dough?retryWrites=true&w=majority";
+//const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
-/***********************************************************/
-/*
-router.get('/', function(req, res, next) {
-  res.render('home');
-});
+MongoClient.connect(uri, {useUnifiedTopology: true}, (err, client) => {
+  if (err) return console.error(err)
+    console.log('Connected to db');
 
-router.get('/test', function(req, res, next) {
-  client.connect(err => {
-    client.db("leggio_dough").collection("products").find().toArray()
-      .then(results => {
+    let db = client.db("leggio_dough");
+    let Products = db.collection("products");
+
+    router.get('/test', (req, res) => {
+      db.collection("products").find.toArray().then(results => {
         console.log(results)
-        res.render('test',
-        {products: results})
-      })
-    .catch(error => console.error(error))
-    client.close();
-    });
+        res.render('test.ejs', {"products": results})
+      }).catch(error => console.log(error));
+    })
 });
-*/
-/***********************************************************/
+
+
+
+
+//working section with hard coded data
 /*
-client.connect(err => {
-  let db = client.db("leggio_dough");
-  let Products = db.collection("products");
-  let Orders = db.collection("orders");
-  let OrderItems = db.collection("order_items");
-  
-  router.get('/', function(req, res, next) {
-    res.render('home');
-  });
-
-
-  router.get('/test', function(req, res, next) {
-    Products.find().toArray()
-      .then(results => {
-        console.log(results)
-        res.render('test',
-        {products: results})
-      })
-      .catch(error => console.error(error))
-  });
-
-  //client.close();
-});
-*/
 
 router.get('/', (req, res) => {
   res.render('home');
@@ -80,5 +55,5 @@ router.get('/about', (req, res) => {
 router.get('/cart', (req, res) => {
   res.render('cart');
 });
-
+*/
 module.exports = router;
