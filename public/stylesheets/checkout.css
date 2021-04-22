@@ -55,3 +55,9 @@ input[type = submit] {
     margin: 3% 0%;
     cursor: pointer;
 }
+
+@media screen and (max-width: 800px) {
+    main {
+        margin: 5% 2%;
+    }
+}
