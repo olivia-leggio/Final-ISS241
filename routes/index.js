@@ -99,7 +99,7 @@ router.get('/pastries', (req, res) => {
      "description": "alaewkefjeiao",
      "category": "pastries"},
 
-    {"name": "Pain au Chocolat",
+    {"name": "Pain-au-Chocolat",
      "quantity": 6,
      "price": 2.00,
      "description": "alaewkefjeiao",
