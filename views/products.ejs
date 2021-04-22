@@ -11,7 +11,7 @@
 <body>
     <header>
         <div class = "nav-item active">
-            <a href = "/products">products</a>
+            <a href = "/">products</a>
         </div>
         <div class = "nav-item">
             <a href = "/about">about</a>
@@ -25,15 +25,39 @@
             <% if(category === "pasta") { %>
                 <% console.log('category is pasta'); %>
                 <div class = "category-link active">
-                    <a href = "#">pasta</a>
+                    <a href = "/">pasta</a>
+                </div>
+                <div class = "category-link">
+                    <a href = "/bread">bread</a>
+                </div>
+                <div class = "category-link">
+                    <a href = "/pastries">pastries</a>
                 </div>
             <% } %>
-            <div class = "category-link">
-                <a href = "#">bread</a>
-            </div>
-            <div class = "category-link">
-                <a href = "#">pastries</a>
-            </div>
+            <% if(category === "bread") { %>
+                <% console.log('category is pasta'); %>
+                <div class = "category-link">
+                    <a href = "/">pasta</a>
+                </div>
+                <div class = "category-link active">
+                    <a href = "/bread">bread</a>
+                </div>
+                <div class = "category-link">
+                    <a href = "/pastries">pastries</a>
+                </div>
+            <% } %>
+            <% if(category === "pastries") { %>
+                <% console.log('category is pasta'); %>
+                <div class = "category-link">
+                    <a href = "/">pasta</a>
+                </div>
+                <div class = "category-link">
+                    <a href = "/bread">bread</a>
+                </div>
+                <div class = "category-link active">
+                    <a href = "/pastries">pastries</a>
+                </div>
+            <% } %>
         </nav>
         <div id = "list">
             <% for (var i = 0; i < products.length; i++) { %>
