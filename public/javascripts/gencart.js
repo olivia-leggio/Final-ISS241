@@ -7,6 +7,8 @@ if (keys.length === 1) {
         let text = document.createTextNode("Your cart is empty!!");
         message.appendChild(text);
     main.appendChild(message);
+    main.classList.add("borderless");
+    document.querySelector("aside").classList.add("hidden");
 }
 
 for (let i = 1; i < keys.length; i++) {

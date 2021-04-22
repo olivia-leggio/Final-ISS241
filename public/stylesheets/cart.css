@@ -23,27 +23,58 @@ header {
 main {
     display: grid;
     grid-template-columns: 2fr 1fr;
+    margin: 1% 5%;
+    font-family: var(--sansserif-font);
 }
 
 section {
     display: flex;
     flex-direction: column;
     margin: 2%;
-
-    border: 1px black solid;
+    border: 1px rgb(89, 89, 89) solid;
+    border-radius: 1em;
+}
+.borderless {
+    border: none;
 }
 
 item {
-    border: 1px grey solid;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
 }
+item + item {
+    border-top: 1px rgb(225, 225, 225) solid;
+}
 article {
     text-align: center;
 }
+article h3 {
+    font-family: var(--serif-font);
+}
+article h5 {
+    color: var(--highlight-red);
+}
+article h5:hover {
+    cursor: pointer;
+}
+article h5:active {
+    color: #69160c;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 2%;
+}
+input[type = text] {
+    margin: 1%;
+}
+input[type = submit] {
+    width: 20%;
+    margin: 3% 0%;
+    cursor: pointer;
+}
 
-#checkout {
-    text-decoration: none;
-    color: inherit;
+.hidden {
+    display: none;
 }
