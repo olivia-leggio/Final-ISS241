@@ -47,7 +47,7 @@ item + item {
     border-top: 1px rgb(225, 225, 225) solid;
 }
 article {
-    text-align: center;
+    width: 50%;
 }
 article h3 {
     font-family: var(--serif-font);
@@ -57,9 +57,13 @@ article h5 {
 }
 article h5:hover {
     cursor: pointer;
+    text-decoration: underline;
 }
 article h5:active {
     color: #69160c;
+}
+aside h2 {
+    font-family: var(--serif-font);
 }
 form {
     display: flex;
@@ -67,7 +71,7 @@ form {
     margin: 2%;
 }
 input[type = text] {
-    margin: 1%;
+    margin: 1% 0%;
 }
 input[type = submit] {
     width: 20%;

@@ -15,7 +15,7 @@ const transporter = nodemailer.createTransport({
 
 var mcInstance = 'us1',
     mcListId = '794367443b',
-    mcApiKey = 'b57e9b2bbf5e8a2b3f550ffb63aa78a3-us1'
+    mcApiKey = 'b57e9b2bbf5e8a2b3f550ffb63aa78a3-us1';
 
 let MongoClient = require('mongodb').MongoClient;
 let uri = "mongodb+srv://testuser:12345@cluster0.prj3a.mongodb.net/leggio_dough?retryWrites=true&w=majority";
@@ -47,37 +47,37 @@ router.get('/', (req, res) => {
     {"name": "Tortellini", 
      "quantity": 1,
      "price": 4.00,
-     "description": "lkjdakldfkads;fadsj",
+     "description": "small pasta filled with our delicious ricotta and parmesan cheese filling",
      "category": "pasta"},
 
     {"name": "Farfalle",
      "quantity": 3,
      "price": 3.00,
-     "description": "ldalleiadfkalkf",
+     "description": "Bow-tie shaped pasta. Our family recommends it with a meat sauce and mushrooms",
      "category": "pasta"},
 
     {"name": "Fusilli",
      "quantity": 3,
      "price": 3.00,
-     "description": "ldalleiadfkalkf",
+     "description": "A fun twisted pasta that holds sauces nicely in its curls",
      "category": "pasta"},
     
     {"name": "Garganelli",
      "quantity": 3,
      "price": 3.00,
-     "description": "ldalleiadfkalkf",
+     "description": "The large openning and ridges on the side make this shape perfect for holding sauce",
      "category": "pasta"},
 
     {"name": "Ravioli",
      "quantity": 3,
      "price": 3.00,
-     "description": "ldalleiadfkalkf",
+     "description": "Large squares filled with our ricotta and parmesan cheese filling",
      "category": "pasta"},
     
     {"name": "Sacchetti",
      "quantity": 3,
      "price": 3.00,
-     "description": "ldalleiadfkalkf",
+     "description": "A bit of a less common shape, these hold more filling than ravioli and are also filled with our ricotta and parmesan filling",
      "category": "pasta"}],
   "category": "pasta"
   });
@@ -89,7 +89,7 @@ router.get('/bread', (req, res) => {
     {"name": "Baguette",
      "quantity": 2,
      "price": 3.00,
-     "description": "alaewkefjeiao",
+     "description": "A classic large loaf covered in sesame seeds",
      "category": "bread"}],
    "category": "bread"
   });
@@ -101,19 +101,19 @@ router.get('/pastries', (req, res) => {
     {"name": "Croissant",
      "quantity": 6,
      "price": 2.00,
-     "description": "alaewkefjeiao",
+     "description": "Beautifully golden and buttery, each order contains 4",
      "category": "pastries"},
 
     {"name": "Pain-au-Chocolat",
      "quantity": 6,
      "price": 2.00,
-     "description": "alaewkefjeiao",
+     "description": "These are made with the same dough as a croissant, but are rolled around a piece of chocolate. Each order contains 4",
      "category": "pastries"},
     
     {"name": "Macarons",
      "quantity": 5,
      "price": 5.00,
-     "description": "alaewkefjeiao",
+     "description": "Our macarons are originally made vanilla flavored, but email us if you have any specific flavor requests. Each order contains 10",
      "category": "pastries"}],
    "category": "pastries"
   });

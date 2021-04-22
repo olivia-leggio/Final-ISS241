@@ -32,6 +32,7 @@ function getItem(item) {
 //performs checkout operations
 //removes all items from cart
 function checkout() {
+    //should put local storage into db but db connection isnt working
     Cart.clear();
     console.log("cart cleared");
 }
