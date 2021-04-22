@@ -1,5 +1,16 @@
 var express = require('express');
 var router = express.Router();
+var bodyparser = require('body-parser');
+var nodemailer = require('nodemailer');
+
+const transporter = nodemailer.createTransport({
+  host: 'smtp.ethereal.email',
+  port: 587,
+  auth: {
+      user: 'elenor.okuneva@ethereal.email',
+      pass: 'zNQspehAbZmy2tbGq7'
+  }
+});
 
 let MongoClient = require('mongodb').MongoClient;
 let uri = "mongodb+srv://testuser:12345@cluster0.prj3a.mongodb.net/leggio_dough?retryWrites=true&w=majority";
@@ -109,6 +120,30 @@ router.get('/about', (req, res) => {
 
 router.get('/cart', (req, res) => {
   res.render('cart');
+});
+
+router.post('/cart', (req, res) => {
+  console.log(req.body);
+  let options = {
+    from: 'elenor.okuneva@ethereal.email',
+    to: 'zach@leggiodough.com',
+    subject: 'New order from ' + req.body.name,
+    html: '<ul><li>'+ req.body.email +'</li><li>'+ req.body.info +'</li></ul>'
+  };
+  transporter.sendMail(options, (error, info) => {
+    if (error) {
+      console.log(error);
+    }
+    else {
+      console.log('email sent: ' + info.response);
+    }
+  });
+
+  res.redirect('/checkout');
+});
+
+router.get('/checkout', (req, res) => {
+  res.render('checkout');
 });
 
 module.exports = router;

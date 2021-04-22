@@ -22,10 +22,18 @@
     </header>
 
     <main>
-        <!--filled dynamically by gencart.js-->
+        <section>
+            <!--filled dynamically by gencart.js-->
+        </section>
+        <aside>
+            <form action = "/cart" method = "post" id = "form">
+                <input type = "text" name = "name" placeholder = "name">
+                <input type = "text" name = "email" placeholder = "email">
+                <input type = "text" name = "info" placeholder = "additional instructions">
+                <input type = "submit" value = "checkout" onclick = checkout()>
+            </form>
+        </aside>
     </main>
-
-    <h5 onclick = checkout()>clear cart</h5>
 
     <script src = "/javascripts/cart.js"></script>
     <script src = "/javascripts/gencart.js"></script>

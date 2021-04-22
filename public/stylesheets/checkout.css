@@ -1,0 +1,20 @@
+:root {
+    --serif-font: 'Lora', serif;
+    --sansserif-font: 'Raleway', sans-serif;
+    --highlight-red: #A23122;
+}
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.nav-item {
+    margin: 1em;
+}
+.nav-item a {
+    color: black;
+    font-family: var(--sansserif-font);
+}
+main {
+    display: grid;
+}

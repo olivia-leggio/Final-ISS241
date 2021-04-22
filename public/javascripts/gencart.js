@@ -1,6 +1,6 @@
 let keys = Object.keys(Cart);
 
-let main = document.querySelector("main");
+let main = document.querySelector("section");
 
 if (keys.length === 1) {
     let message = document.createElement("h2");
