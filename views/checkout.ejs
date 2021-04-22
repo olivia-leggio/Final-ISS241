@@ -21,7 +21,18 @@
         </div>
     </header>
     <main>
-        
+        <section>
+            <h2>Your order has been placed!</h2>
+            <h5>you will receive an email when it is ready for pickup</h5>
+        </section>
+        <section>
+            <h5 id = "form-label">sign up for our mailing list to be notified about new products and special offers!</h5>
+            <form action = '/checkout' method = 'post'>
+                <input type = "text" name = "name" placeholder = "name">
+                <input type = "text" name = "email" placeholder = "email">
+                <input type = "submit" value = "sign me up!">
+            </form>
+        </section>
     </main>
 </body>
 </html>

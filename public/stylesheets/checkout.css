@@ -15,6 +15,43 @@ header {
     color: black;
     font-family: var(--sansserif-font);
 }
+.active a {
+    color: var(--highlight-red);
+}
 main {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    margin: 5% 20%;
+    border: 1px rgb(89, 89, 89) solid;
+    border-radius: 1em;
+    align-items: center;
+
+    font-family: var(--sansserif-font);
+}
+section h2 {
+    font-family: var(--serif-font);
+}
+section + section {
+    border-top: 1px rgb(225, 225, 225) solid;
+}
+section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#form-label {
+    color: var(--highlight-red);
+}
+form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2%;
+}
+input[type = text] {
+    margin: 1%;
+}
+input[type = submit] {
+    margin: 3% 0%;
+    cursor: pointer;
 }

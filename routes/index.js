@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var bodyparser = require('body-parser');
 var nodemailer = require('nodemailer');
+var request = require('superagent');
 
 const transporter = nodemailer.createTransport({
   host: 'smtp.ethereal.email',
@@ -11,6 +12,10 @@ const transporter = nodemailer.createTransport({
       pass: 'zNQspehAbZmy2tbGq7'
   }
 });
+
+var mcInstance = 'us1',
+    mcListId = '794367443b',
+    mcApiKey = 'b57e9b2bbf5e8a2b3f550ffb63aa78a3-us1'
 
 let MongoClient = require('mongodb').MongoClient;
 let uri = "mongodb+srv://testuser:12345@cluster0.prj3a.mongodb.net/leggio_dough?retryWrites=true&w=majority";
@@ -144,6 +149,27 @@ router.post('/cart', (req, res) => {
 
 router.get('/checkout', (req, res) => {
   res.render('checkout');
+});
+
+router.post('/checkout', (req, res) => {
+  console.log(req.body);
+  request
+  .post('https://' + mcInstance + '.api.mailchimp.com/3.0/lists/' + mcListId + '/members/')
+  .set('Content-Type', 'application/json;charset=utf-8')
+  .set('Authorization', 'Basic ' + new Buffer('any:' + mcApiKey ).toString('base64'))
+  .send({
+    'email_address': req.body.email,
+    'status': 'subscribed',
+    'merge_fields': {
+      'FNAME': req.body.name
+    }
+  })
+  .end(function(err, response) {
+    if (err) {
+      console.log(err);
+    }
+  });
+  res.redirect('/');
 });
 
 module.exports = router;
